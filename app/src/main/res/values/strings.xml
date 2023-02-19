@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppWithCoroutine</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="insert_a_number">Insert a number</string>
+    <string name="press_to_increase_your_number">Press to increase your number</string>
+    <string name="_0">0</string>
+</resources>
