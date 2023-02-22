@@ -18,18 +18,19 @@ class FirstFragment : Fragment() {
 
     private suspend fun assignTextValue(): Int {
         delay(2000)
-        return if(textValue == 0){
+        return if (textValue == 0) {
             textValue = binding.numberEditText.text.toString().toInt()
             ++textValue
         } else {
             textValue++
         }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFirstBinding.inflate(inflater, container,false)
+        binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,20 +38,18 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.numberEditText.doOnTextChanged { text, start, before, count ->
-            if(binding.numberEditText.length() > 0){
+            if (binding.numberEditText.length() > 0) {
                 binding.button.isEnabled = true
-            } else binding.button.isEnabled = textValue >0
+            } else binding.button.isEnabled = textValue > 0
         }
 
-        binding.button.
-        setOnClickListener {
+        binding.button.setOnClickListener {
             viewLifecycleOwner.lifecycleScope.launch {
-                    binding.numberText.text = assignTextValue().toString()
+                binding.numberText.text = assignTextValue().toString()
             }
         }
 
     }
-
 
 
 }
