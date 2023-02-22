@@ -22,7 +22,7 @@ class FirstFragment : Fragment() {
             textValue = binding.numberEditText.text.toString().toInt()
             ++textValue
         } else {
-            textValue++
+            ++textValue
         }
     }
 
