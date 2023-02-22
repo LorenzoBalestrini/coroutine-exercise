@@ -19,16 +19,12 @@ class FirstFragment : Fragment() {
     private suspend fun assignTextValue(): Int {
         delay(2000)
         return if(textValue == 0){
-            textValue = binding.numberEditText.text.toString().toInt().plus(1)
-            textValue++
+            textValue = binding.numberEditText.text.toString().toInt()
+            ++textValue
         } else {
             textValue++
         }
     }
-
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,9 +40,7 @@ class FirstFragment : Fragment() {
             if(binding.numberEditText.length() > 0){
                 binding.button.isEnabled = true
             } else binding.button.isEnabled = textValue >0
-
         }
-
 
         binding.button.
         setOnClickListener {
